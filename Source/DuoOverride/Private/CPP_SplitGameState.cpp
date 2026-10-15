@@ -10,15 +10,6 @@
 
 
 
-void ACPP_SplitGameState::SetSplitRatio(float NewRatio)
-{
-	if (UWorld* World = GetWorld())
-	{
-		if (UCPP_CustomViewportClient* VC = Cast<UCPP_CustomViewportClient>(World->GetGameViewport()))
-		{
-			VC->SetTargetRatio(NewRatio);
-		}
-	}
-}
+
 
 
