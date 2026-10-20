@@ -16,8 +16,16 @@ class DUOOVERRIDE_API ACPP_GameMode : public AGameModeBase
 	
 public:
 	ACPP_GameMode();
-	
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player Classes")
+	TSubclassOf<APawn> PlayerHackerBP;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player Classes")
+	TSubclassOf<APawn> PlayerAthleteBP;
+
+	virtual UClass* GetDefaultPawnClassForController_Implementation(AController* InController) override;
+
 protected:
 	virtual void BeginPlay() override;
-	
+
 };

@@ -51,9 +51,9 @@ void UCPP_CustomViewportClient::Tick(float DeltaTime)
 
 void UCPP_CustomViewportClient::SetSplitRatio(float NewRatio)
 {
-	if (UWorld* World = GetWorld())
+	if (UWorld* CurrentWorld = GetWorld())
 	{
-		if (UCPP_CustomViewportClient* VC = Cast<UCPP_CustomViewportClient>(World->GetGameViewport()))
+		if (UCPP_CustomViewportClient* VC = Cast<UCPP_CustomViewportClient>(CurrentWorld->GetGameViewport()))
 		{
 			VC->SetTargetRatio(NewRatio);
 		}
